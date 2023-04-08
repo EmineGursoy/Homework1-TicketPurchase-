@@ -11,14 +11,14 @@ struct TicketModel {
     let passenger: PassengerModel
     let date: DateModel
     let clock: ClockModel
-    let seat: Int
-    let seatNumber: Int = 0
+    let seatNo: Int
+    let totalSeatNumber: Int = 0
     
-    init(passenger: PassengerModel, date: DateModel, clock: ClockModel, seat: Int, seatNumber: Int) {
+    init(passenger: PassengerModel, date: DateModel, clock: ClockModel, seatNo: Int, seatNumber: Int) {
         self.passenger = passenger
         self.date = date
         self.clock = clock
-        self.seat = seat
+        self.seatNo = seatNo
     }
     
     func ticketCompare(ticket: TicketModel) -> Bool {

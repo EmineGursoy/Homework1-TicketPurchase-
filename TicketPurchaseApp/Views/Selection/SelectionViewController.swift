@@ -67,14 +67,6 @@ class SelectionViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func fromWhereClicked(_ sender: Any) {
-    }
-    
-    @IBAction func toWhereClicked(_ sender: Any) {
-    }
-    @IBAction func dateClicked(_ sender: Any) {
-    }
-    
     @IBAction func findBusTicketClicked(_ sender: Any) {
     }
 }
