@@ -45,8 +45,7 @@ extension BusTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "seatCell", for: indexPath) as! SeatSelectionCollectionViewCell
         cell.seatImageView.image = UIImage(named: "empty-seat")
-        
-        
+        cell.seatNumberLabel.text = String(indexPath.row + 1)
         
         return cell
     }
