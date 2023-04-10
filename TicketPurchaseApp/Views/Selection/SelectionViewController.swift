@@ -15,7 +15,8 @@ class SelectionViewController: UIViewController {
     
     @IBOutlet weak var dateTextField: UITextField!
     
-    let cities = ["Istanbul","Izmir","Samsun"]
+    let cities = ["Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "İçel (Mersin)", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
+    ]
     
     let fromPickerView = UIPickerView()
     let toPickerView = UIPickerView()
@@ -54,7 +55,7 @@ class SelectionViewController: UIViewController {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .date
         
-        dateTextField.textAlignment = .center
+        //dateTextField.textAlignment = .center
         dateTextField.inputView = datePicker
         dateTextField.inputAccessoryView = createToolbar()
     }
@@ -68,6 +69,26 @@ class SelectionViewController: UIViewController {
     }
     
     @IBAction func findBusTicketClicked(_ sender: Any) {
+        
+        if fromWhereTextField.text == "" {
+            makeAlert(titleInput: "Hata", messageInput: "Lütfen baslangic lokasyonunu seciniz")
+        } else if  toWhereTextField.text == "" {
+            makeAlert(titleInput: "Hata", messageInput: "Lütfen varis lokasyonunu seciniz")
+        } else if fromWhereTextField.text == toWhereTextField.text {
+            makeAlert(titleInput: "Hata", messageInput: "Lütfen baslangic ve varis lokasyonlarini giriniz")
+        } /*else if dateTextField.text == "" {
+            makeAlert(titleInput: "Hata", messageInput: "Lütfen gidis tarihini seciniz")
+        } */
+        
+    }
+    
+    func makeAlert(titleInput: String, messageInput: String){
+        
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
 extension SelectionViewController: UIPickerViewDelegate, UIPickerViewDataSource {
