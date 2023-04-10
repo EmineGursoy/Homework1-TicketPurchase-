@@ -30,6 +30,7 @@
 		63D3C1ED29E0DC1800AC65D3 /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3C1EC29E0DC1800AC65D3 /* BusModel.swift */; };
 		63D3C1EF29E180B000AC65D3 /* SeatSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3C1EE29E180B000AC65D3 /* SeatSelectionCollectionViewCell.swift */; };
 		63D3C1F529E224A300AC65D3 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3C1F429E224A300AC65D3 /* PaymentViewController.swift */; };
+		63D3C1F829E310E500AC65D3 /* TicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3C1F729E310E500AC65D3 /* TicketDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		63D3C1EC29E0DC1800AC65D3 /* BusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
 		63D3C1EE29E180B000AC65D3 /* SeatSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		63D3C1F429E224A300AC65D3 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		63D3C1F729E310E500AC65D3 /* TicketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		6391E0FE29D8E454009ED732 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63D3C1F629E310BB00AC65D3 /* TicketDetail */,
 				63D3C1F329E2247800AC65D3 /* Payment */,
 				63D3C1E629DDC35B00AC65D3 /* Selection */,
 				63D3C1EB29E0D7A000AC65D3 /* BusSelection */,
@@ -223,6 +226,14 @@
 				63D3C1F429E224A300AC65D3 /* PaymentViewController.swift */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		63D3C1F629E310BB00AC65D3 /* TicketDetail */ = {
+			isa = PBXGroup;
+			children = (
+				63D3C1F729E310E500AC65D3 /* TicketDetailViewController.swift */,
+			);
+			path = TicketDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +377,7 @@
 				63D3C1F529E224A300AC65D3 /* PaymentViewController.swift in Sources */,
 				63D3C1DD29DC2AB400AC65D3 /* PassengerModel.swift in Sources */,
 				6391E10629D8E55D009ED732 /* OnBoardingSlideModel.swift in Sources */,
+				63D3C1F829E310E500AC65D3 /* TicketDetailViewController.swift in Sources */,
 				6391E10829D90E2F009ED732 /* SeatSelectionViewController.swift in Sources */,
 				63D3C1EF29E180B000AC65D3 /* SeatSelectionCollectionViewCell.swift in Sources */,
 				63D3C1DF29DC2B2C00AC65D3 /* DateModel.swift in Sources */,

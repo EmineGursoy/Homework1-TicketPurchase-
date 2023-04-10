@@ -47,9 +47,32 @@ class PaymentViewController: UIViewController {
             name = nameTextField.text!
             surname = surnameTextField.text!
             id = Int(idTextField.text!)!
+            
             passenger = PassengerModel(name: name, surname: surname, id: id)
+           
+            //performSegue(withIdentifier: "toTicketDetail", sender: nil)
         }
     }
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTicketDetail" {
+            let destinationVC = segue.destination as! TicketDetailViewController
+            
+            destinationVC.passenger = PassengerModel(name: name, surname: surname, id: id)
+        }
+    }
+    
+    */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTicketDetail" {
+            let destinationVC = segue.destination as! TicketDetailViewController
+            
+            destinationVC.name = passenger?.name ?? ""
+            destinationVC.surname = passenger?.surname ?? ""
+            destinationVC.id = passenger?.id ?? 0
+        }
+    }
+    
     
     func makeAlert(titleInput: String, messageInput: String){
         
