@@ -19,24 +19,16 @@ class TicketDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    
-    var name: String = ""
-    var surname: String = ""
-    var id: Int = 0
-    
-    //var passenger: PassengerModel?
+        
+    var passenger: PassengerModel?
+    var selectedBus: BusModel?
+    var selectedSeats: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
         nameLabel.text = passenger?.name
         surnameLabel.text = passenger?.surname
         idLabel.text = String(passenger?.id ?? 0)
-         */
-      
-        nameLabel.text = name
-        surnameLabel.text = surname
-        idLabel.text = String(id)
     }
    
 }

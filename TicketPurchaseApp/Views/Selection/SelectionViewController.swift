@@ -10,9 +10,7 @@ import UIKit
 class SelectionViewController: UIViewController {
 
     @IBOutlet weak var fromWhereTextField: UITextField!
-    
     @IBOutlet weak var toWhereTextField: UITextField!
-    
     @IBOutlet weak var dateTextField: UITextField!
     
     let cities = ["Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "İçel (Mersin)", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
@@ -22,6 +20,15 @@ class SelectionViewController: UIViewController {
     let toPickerView = UIPickerView()
     
     let datePicker = UIDatePicker()
+    
+    
+    private var day: Int = 1
+    private var month: String = ""
+    private var year: Int = 2021
+    private var dateString: String = ""
+    
+    private var date: DateModel?
+    private var ticket: TicketModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +86,25 @@ class SelectionViewController: UIViewController {
         } /*else if dateTextField.text == "" {
             makeAlert(titleInput: "Hata", messageInput: "Lütfen gidis tarihini seciniz")
         } */
+        dateString = dateTextField.text!
+        var dateArray = dateString.components(separatedBy: " ")
+        day = Int(dateArray[0])!
+        month = dateArray[1]
+        year = Int(dateArray[2])!
+        date = DateModel(day: day, month: month, year: year)
         
+      
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBusSelectionPage" {
+            let destinationVC = segue.destination as! BusSelectionViewController
+            
+            destinationVC.fromWhere = fromWhereTextField.text!
+            destinationVC.toWhere = toWhereTextField.text!
+            destinationVC.date = dateTextField.text!
+            destinationVC.dateModel = date
+        }
     }
     
     func makeAlert(titleInput: String, messageInput: String){

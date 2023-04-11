@@ -22,6 +22,9 @@ class PaymentViewController: UIViewController {
    //private var phoneNumber: String = ""
    //private var email: String = ""
     private var passenger: PassengerModel?
+    
+    var selectedBus: BusModel?
+    var selectedSeats: [Int] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +53,7 @@ class PaymentViewController: UIViewController {
             
             passenger = PassengerModel(name: name, surname: surname, id: id)
            
-            //performSegue(withIdentifier: "toTicketDetail", sender: nil)
+            performSegue(withIdentifier: "toTicketDetail", sender: nil)
         }
     }
     /*
@@ -67,9 +70,9 @@ class PaymentViewController: UIViewController {
         if segue.identifier == "toTicketDetail" {
             let destinationVC = segue.destination as! TicketDetailViewController
             
-            destinationVC.name = passenger?.name ?? ""
-            destinationVC.surname = passenger?.surname ?? ""
-            destinationVC.id = passenger?.id ?? 0
+            destinationVC.passenger = passenger
+            destinationVC.selectedBus = selectedBus
+            destinationVC.selectedSeats = selectedSeats
         }
     }
     
