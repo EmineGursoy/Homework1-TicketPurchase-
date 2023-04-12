@@ -18,9 +18,4 @@ class PassengerModel {
         self.id = id
     }
     
-    func printPassenger() {
-        print("\(name) - \(surname) - \(id)")
-
-    }
-  
 }

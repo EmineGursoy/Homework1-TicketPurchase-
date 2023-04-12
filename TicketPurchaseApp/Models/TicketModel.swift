@@ -13,21 +13,16 @@ struct TicketModel {
     let clock: ClockModel
     let seatNo: Int
     let totalSeatNumber: Int = 0
-    /*
+    
     init(passenger: PassengerModel, date: DateModel, clock: ClockModel, seatNo: Int, seatNumber: Int) {
         self.passenger = passenger
         self.date = date
         self.clock = clock
         self.seatNo = seatNo
     }
-    */
+    
     func ticketCompare(ticket: TicketModel) -> Bool {
        return true
-    }
-    
-    func printTicket() {
-        print("<\(passenger.name)> <\(passenger.surname) <\(passenger.id)> , <\(date.day) - \(date.month) - \(date.year) , <\(clock.hour) : \(clock.minute)")
-        
     }
     
 }

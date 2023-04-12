@@ -35,8 +35,8 @@ class OnBoardingViewController: UIViewController {
             
             slides = [
                 OnboardingSlideModel(title: "Bilet-le´ye Hoşgeldin!", description: "Planlarini yap, saniyeler icinde biletini al!", image: UIImage(named: "map")!),
-                OnboardingSlideModel(title: "En güvenli uygulama karsinda!", description: "Biletini al ve hazirliklarini yap", image: UIImage(named: "suitcases")!),
-                OnboardingSlideModel(title: "Hazır Mısın?", description: "Muhteşem bir deneyim için hemen kullanmaya başla!", image: UIImage(named: "mountain")!)
+                OnboardingSlideModel(title: "En güvenli uygulama karsinda!", description: "", image: UIImage(named: "suitcases")!),
+                OnboardingSlideModel(title: "Hazır Mısın?", description: "Hemen kullanmaya basla!", image: UIImage(named: "mountain")!)
             ]
         }
        

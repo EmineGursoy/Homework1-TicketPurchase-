@@ -15,12 +15,11 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var cardNumberTextField: UITextField!
+    @IBOutlet weak var totalCostLabel: UILabel!
     
    private var name: String = ""
    private var surname: String = ""
    private var id: Int = 0
-   //private var phoneNumber: String = ""
-   //private var email: String = ""
     private var passenger: PassengerModel?
     
     var selectedBus: BusModel?
@@ -33,6 +32,8 @@ class PaymentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        totalCostLabel.text = "Toplam ücret: " + String((selectedBus!.price) * (selectedSeats.count)) + " tl"
+        
     }
 
     @IBAction func payButtonClicked(_ sender: Any) {
@@ -59,16 +60,7 @@ class PaymentViewController: UIViewController {
             performSegue(withIdentifier: "toTicketDetail", sender: nil)
         }
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTicketDetail" {
-            let destinationVC = segue.destination as! TicketDetailViewController
-            
-            destinationVC.passenger = PassengerModel(name: name, surname: surname, id: id)
-        }
-    }
-    
-    */
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTicketDetail" {
             let destinationVC = segue.destination as! TicketDetailViewController

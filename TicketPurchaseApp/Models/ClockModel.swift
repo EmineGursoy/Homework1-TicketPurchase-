@@ -15,9 +15,5 @@ struct ClockModel {
         self.hour = hour
         self.minute = minute
     }
-    
-    func printClock() {
-        print("\(hour) : \(minute)")
-    }
-    
+
 }

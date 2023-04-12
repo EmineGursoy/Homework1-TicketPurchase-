@@ -9,18 +9,14 @@ import Foundation
 
 struct DateModel {
     let day: Int
-    //let month: Int
     let month: String
     let year: Int
     
-  //  init(day: Int = 1, month: Int = 1, year: Int = 2021) {
     init(day: Int = 1, month: String = "", year: Int = 2021) {
         self.day = day
         self.month = month
         self.year = year
     }
     
-    func printDate() {
-        print("\(day) / \(month) / \(year)")
-    }
+  
 }

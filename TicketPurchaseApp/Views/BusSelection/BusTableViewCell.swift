@@ -32,12 +32,14 @@ class BusTableViewCell: UITableViewCell {
         
     }
     
-    func setUp(model: BusModel, isExpanded: Bool, selectedSeats: [Int]) {
+    func setUp(model: BusModel, isExpanded: Bool, isSelected: Bool, selectedSeats: [Int]) {
         imageView?.image = model.busImage
         priceLabel.text = String(model.price) + " tl"
         timeLabel.text = timeString(from: model.time)
-        seatCollectionView.isHidden = !isExpanded //kapaliysa C.V. saklanir
+        seatCollectionView.isHidden = !isExpanded // kapaliysa C.V. saklanir
         examineButton.titleLabel?.text = isExpanded ? "Kapat" : "Incele" // butonun üstüne acilmissa kapat acilmamissa incele yazar
+        confirmButton.backgroundColor = isSelected ? .darkGray : .systemGray
+        confirmButton.isEnabled = isSelected ? true : false // onayla butonu koltuk secimi yapildiysa aktif olur
         iconsView.isHidden = !isExpanded
         confirmButton.isHidden = !isExpanded
         
@@ -48,9 +50,6 @@ class BusTableViewCell: UITableViewCell {
     
     @IBAction func examineClicked(_ sender: Any) {
         onExpandButtonClicked?()
-    }
-    @IBAction func confirmClicked(_ sender: Any) {
-        
     }
     
     private func timeString(from clockModel: ClockModel) -> String {

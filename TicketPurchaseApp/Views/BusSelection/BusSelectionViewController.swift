@@ -23,6 +23,7 @@ class BusSelectionViewController: UIViewController {
     private var selectedSeats: [Int] = []
 
     private var expandedCells: [Int] = [] //acik celler tutuluyor
+    var isSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,15 @@ class BusSelectionViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    @IBAction func confirmButtonClicked() {
+        if selectedBus == nil || selectedSeats.isEmpty {
+            makeAlert(titleInput: "Hata", messageInput: "Lütfen koltuk secimi yapiniz.")
+            return
+        }
+        
+        performSegue(withIdentifier: "showPayment", sender: nil)
+    }
 }
 extension BusSelectionViewController: UITableViewDataSource, UITableViewDelegate {
     //cell sayisini döner
@@ -59,6 +69,7 @@ extension BusSelectionViewController: UITableViewDataSource, UITableViewDelegate
         cell.setUp(
             model: busModel,
             isExpanded: expandedCells.contains(indexPath.row),
+            isSelected: selectedSeats.count > 0 ? true : false, //koltuk secimi yapildiysa true yapilmadiysa false
             selectedSeats: selectedBus?.id == busModel.id ? selectedSeats : [] // secilen otobus bu otobus ise secilen koltuklari ver, degilse bos dizi ver
         )
         
