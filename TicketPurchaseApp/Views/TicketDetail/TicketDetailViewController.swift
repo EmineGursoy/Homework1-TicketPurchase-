@@ -22,13 +22,30 @@ class TicketDetailViewController: UIViewController {
         
     var passenger: PassengerModel?
     var selectedBus: BusModel?
+    var dateModel: DateModel?
     var selectedSeats: [Int] = []
+    var fromWhere: String = ""
+    var toWhere: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        busCompanyLogoImageView.image = selectedBus?.busImage
+        fromWhereLabel.text = fromWhere
+        toWhereLabel.text = toWhere
         nameLabel.text = passenger?.name
         surnameLabel.text = passenger?.surname
         idLabel.text = String(passenger?.id ?? 0)
+        
+        dateLabel.text = "\(dateModel!.day) / \(dateModel!.month) / \(dateModel!.year)"
+        hourLabel.text = "\(selectedBus!.time.hour):\(selectedBus!.time.minute)"
+        
+        for i in 0...selectedSeats.count-1 {
+            selectedSeatsLabel.text?.append(String(selectedSeats[i]) + ", ")
+
+        }
+        
+        totalCostLabel.text = String((selectedBus!.price) * (selectedSeats.count)) + " tl"
+       
     }
    
 }

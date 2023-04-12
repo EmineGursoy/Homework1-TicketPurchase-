@@ -26,6 +26,7 @@ class BusSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = UIColor.black
         fromWhereLabel.text = fromWhere
         toWhereLabel.text = toWhere
         dateLabel.text = date
@@ -103,6 +104,9 @@ extension BusSelectionViewController: UITableViewDataSource, UITableViewDelegate
         if let destinationViewController = segue.destination as? PaymentViewController {
             destinationViewController.selectedBus = selectedBus
             destinationViewController.selectedSeats = selectedSeats
+            destinationViewController.fromWhere = fromWhere
+            destinationViewController.toWhere = toWhere
+            destinationViewController.dateModel = dateModel
         }
     }
 }

@@ -173,8 +173,8 @@
 			children = (
 				63D3C1F629E310BB00AC65D3 /* TicketDetail */,
 				63D3C1F329E2247800AC65D3 /* Payment */,
-				63D3C1E629DDC35B00AC65D3 /* Selection */,
 				63D3C1EB29E0D7A000AC65D3 /* BusSelection */,
+				63D3C1E629DDC35B00AC65D3 /* Selection */,
 				6391E0FF29D8E45F009ED732 /* OnBoarding */,
 			);
 			path = Views;

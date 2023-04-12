@@ -24,7 +24,10 @@ class PaymentViewController: UIViewController {
     private var passenger: PassengerModel?
     
     var selectedBus: BusModel?
+    var dateModel: DateModel?
     var selectedSeats: [Int] = []
+    var fromWhere: String = ""
+    var toWhere: String = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +76,10 @@ class PaymentViewController: UIViewController {
             destinationVC.passenger = passenger
             destinationVC.selectedBus = selectedBus
             destinationVC.selectedSeats = selectedSeats
+            destinationVC.fromWhere = fromWhere
+            destinationVC.toWhere = toWhere
+            destinationVC.dateModel = dateModel
+            
         }
     }
     

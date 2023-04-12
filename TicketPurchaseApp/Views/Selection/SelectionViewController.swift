@@ -54,6 +54,7 @@ class SelectionViewController: UIViewController {
         toolbar.sizeToFit()
         //done button
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        doneButton.tintColor = UIColor.black
         toolbar.setItems([doneButton], animated: true)
         
         return toolbar
@@ -79,13 +80,18 @@ class SelectionViewController: UIViewController {
         
         if fromWhereTextField.text == "" {
             makeAlert(titleInput: "Hata", messageInput: "Lütfen baslangic lokasyonunu seciniz")
+            return
         } else if  toWhereTextField.text == "" {
             makeAlert(titleInput: "Hata", messageInput: "Lütfen varis lokasyonunu seciniz")
+            return
         } else if fromWhereTextField.text == toWhereTextField.text {
             makeAlert(titleInput: "Hata", messageInput: "Lütfen baslangic ve varis lokasyonlarini giriniz")
-        } /*else if dateTextField.text == "" {
+            return
+        } else if dateTextField.text == "" {
             makeAlert(titleInput: "Hata", messageInput: "Lütfen gidis tarihini seciniz")
-        } */
+            return
+        }
+        
         dateString = dateTextField.text!
         var dateArray = dateString.components(separatedBy: " ")
         day = Int(dateArray[0])!

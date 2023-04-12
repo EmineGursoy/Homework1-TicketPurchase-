@@ -11,8 +11,6 @@ class BusTableViewCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var IMAGEvIEW: UIImageView!
-    
     @IBOutlet weak var iconsView: UIView!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var seatCollectionView: UICollectionView!
@@ -35,8 +33,8 @@ class BusTableViewCell: UITableViewCell {
     }
     
     func setUp(model: BusModel, isExpanded: Bool, selectedSeats: [Int]) {
-        IMAGEvIEW.image = model.busImage
-        priceLabel.text = model.price
+        imageView?.image = model.busImage
+        priceLabel.text = String(model.price) + " tl"
         timeLabel.text = timeString(from: model.time)
         seatCollectionView.isHidden = !isExpanded //kapaliysa C.V. saklanir
         examineButton.titleLabel?.text = isExpanded ? "Kapat" : "Incele" // butonun üstüne acilmissa kapat acilmamissa incele yazar
