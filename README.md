@@ -10,7 +10,7 @@ TicketPurchase (Bilet-le) is an application that allows the user to buy bus tick
 ## Non-Functional Features
 - Support iOS 16.2
 
-##Screen Records
+## Screen Records
 
 ![](https://github.com/EmineGursoy/Homework1-TicketPurchase-/blob/main/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20-%202023-04-12%20at%2021.22.30.gif)
 
